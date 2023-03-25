@@ -12,7 +12,7 @@
  console.log(getComputerChoice());
 
  function playRound(playerSelection, computerSelection){
-    let playerCap = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
+    let playerCap = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     if (playerCap === computerSelection) {
         return "Tie!";
     } else if (playerCap == "Rock"){
@@ -35,3 +35,6 @@
         }
     }
  }
+
+const computerSelection = getComputerChoice();
+console.log(playRound("rOcK",computerSelection));
