@@ -14,6 +14,18 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 
+function playerInput(){
+    let input = prompt("Choose: rock, paper or scissors");
+    let inputCap = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    while (inputCap != "Rock" && inputCap != "Paper" && inputCap != "Scissors"){
+        input = prompt("Invalid choice. Pick either: rock, paper or scissors");
+        inputCap = input.charAt(0).toUpperCase() + input.slice(1).toLowerCase();
+    }
+    return inputCap;
+}
+
+console.log(playerInput());
+
 function playRound(playerSelection, computerSelection){
     let playerCap = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase(); 
     if (playerCap === computerSelection) {
@@ -61,5 +73,3 @@ function game(){
         console.log("Tie game!");
     }
 }
-
-game();
