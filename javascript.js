@@ -35,26 +35,26 @@ function playRound(playerSelection, computerSelection){
     } else if (playerSelection == "rock"){
         if (computerSelection == "paper"){
             results.textContent = "You lose! Rock is beaten by paper.";
-            computerScore++;
+            return ++computerScore;
         } else if (computerSelection == "scissors"){
             results.textContent = "You win! Rock beats scissors.";
-            playerScore++;
+            return ++playerScore;
         }
     } else if (playerSelection == "paper"){
         if (computerSelection == "rock"){
             results.textContent = "You win! Paper beats rock.";
-            playerScore++;
+            return ++playerScore;
         } else if (computerSelection == "scissors"){
             results.textContent = "You lose! Paper is beaten by scissors.";
-            computerScore++;
+            return ++computerScore;
         }
     }  else if (playerSelection == "scissors"){
         if (computerSelection == "rock"){
             results.textContent = "You lose! Scissors are beaten by rock.";
-            computerScore++;
+            return ++computerScore;
         } else if (computerSelection == "paper"){
             results.textContent = "You win! Scissors beat rock.";
-            playerScore++;
+            return ++playerScore;
         }
     }
     
@@ -82,14 +82,15 @@ buttons.forEach((button) => {
       if(playerScore < 5 && computerScore < 5){
         playRound(button.id, getComputerChoice());
         score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
-      } else if(playerScore == 5){
-        winner.textContent = "Congratulations! You won!";
-        playAgain.textContent = "Play again?";
-        body.appendChild(playAgain);
-      } else if(computerScore == 5){
-        winner.textContent = "Congratulations! You won!";
-        playAgain.textContent = "Play again?";
-        body.appendChild(playAgain);
-      } 
+        if(playerScore == 5){
+            winner.textContent = "Congratulations! You won!";
+            playAgain.textContent = "Play again?";
+            body.appendChild(playAgain);
+        } else if(computerScore == 5){
+            winner.textContent = "Congratulations! You won!";
+            playAgain.textContent = "Play again?";
+            body.appendChild(playAgain);
+        } 
+      }
     });
   });
