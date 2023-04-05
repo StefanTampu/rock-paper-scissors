@@ -14,6 +14,7 @@ body.appendChild(winner);
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('button');
+playAgain.textContent = "Play again?";
 
 function getComputerChoice(){
     let num = Math.ceil(Math.random()*3);
@@ -66,11 +67,9 @@ function game(input){
         score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
         if(playerScore == 5){
             winner.textContent = "Congratulations! You won!";
-            playAgain.textContent = "Play again?";
             body.appendChild(playAgain);
         } else if(computerScore == 5){
             winner.textContent = "Congratulations! You won!";
-            playAgain.textContent = "Play again?";
             body.appendChild(playAgain);
         } 
     }
