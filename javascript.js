@@ -65,10 +65,10 @@ function game(input){
         playRound(input, getComputerChoice());
         score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
         if(playerScore == 5){
-            winner.textContent = "Congratulations! You won!";
+            winner.textContent = "Congratulations! You won the game!";
             body.appendChild(playAgain);
         } else if(computerScore == 5){
-            winner.textContent = "Congratulations! You won!";
+            winner.textContent = "The computer won.... Better luck next time!";
             body.appendChild(playAgain);
         } 
     }
