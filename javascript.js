@@ -4,6 +4,10 @@ const results = document.createElement('div');
 results.classList.add('results');
 body.appendChild(results);
 
+const score = document.createElement('div');
+score.classList.add('score')
+body.appendChild(score);
+
 function getComputerChoice(){
     let num = Math.ceil(Math.random()*3);
     if (num === 1){
@@ -46,8 +50,7 @@ function playRound(playerSelection, computerSelection){
             ++playerScore;
         }
     }
-    console.log(playerScore);
-    console.log(computerScore);
+    score.textContent = `Your Score: ${playerScore}; Computer Score: ${computerScore}`;
  }
 
 function game(){
