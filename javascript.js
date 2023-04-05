@@ -60,27 +60,9 @@ function playRound(playerSelection, computerSelection){
     
  }
 
-function game(){
-    let playerSelection = playerInput();
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(`Your Score: ${playerScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-    if (playerScore > computerScore){
-        console.log("You won the game!");
-    } else if (playerScore < computerScore){
-        console.log("You lost the game!");
-    } else {
-        console.log("Tie game!");
-    }
-}
-
-//Button input section
-const buttons = document.querySelectorAll("#btn-container button");
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      if(playerScore < 5 && computerScore < 5){
-        playRound(button.id, getComputerChoice());
+function game(input){
+    if(playerScore < 5 && computerScore < 5){
+        playRound(input, getComputerChoice());
         score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
         if(playerScore == 5){
             winner.textContent = "Congratulations! You won!";
@@ -91,6 +73,13 @@ buttons.forEach((button) => {
             playAgain.textContent = "Play again?";
             body.appendChild(playAgain);
         } 
-      }
+    }
+}
+
+//Button input section
+const buttons = document.querySelectorAll("#btn-container button");
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        game(button.id);
     });
   });
