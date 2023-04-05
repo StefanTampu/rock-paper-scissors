@@ -16,6 +16,9 @@ const playAgain = document.createElement('button');
 playAgain.classList.add('button');
 playAgain.textContent = "Play again?";
 
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice(){
     let num = Math.ceil(Math.random()*3);
     if (num === 1){
@@ -26,9 +29,6 @@ function getComputerChoice(){
         return "scissors";
     }
  }
-
-let playerScore = 0;
-let computerScore = 0;
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
@@ -58,7 +58,6 @@ function playRound(playerSelection, computerSelection){
             return ++playerScore;
         }
     }
-    
  }
 
 function game(input){
@@ -82,3 +81,12 @@ buttons.forEach((button) => {
         game(button.id);
     });
   });
+
+playAgain.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    results.textContent = "";
+    score.textContent = "";
+    winner.textContent = "";
+    body.removeChild(playAgain);
+});
