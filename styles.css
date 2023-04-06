@@ -40,10 +40,6 @@ h1 {
     position: relative;
 }
 
-#game-section h2 {
-    font-size: 2rem; 
-}
-
 #scores {
     width: 100%;
     display: flex;
@@ -106,12 +102,12 @@ button:active {
 }
 
 .results {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #585858;
 }
 
 .winner {
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #585858;
 }
 
