@@ -5,16 +5,18 @@ const body = document.querySelector("body");
 
 const gameSection = document.getElementById("game-section");
 
+const btnContainer = document.getElementById("btn-container");
+
 const results = document.createElement('div');
 results.classList.add('results');
-gameSection.appendChild(results);
+gameSection.insertBefore(results, btnContainer);
 
 const pScore = document.getElementById('player-score');
 const cScore = document.getElementById("computer-score");
 
 const winner = document.createElement('div');
 winner.classList.add('winner');
-gameSection.appendChild(winner);
+gameSection.insertBefore(winner, btnContainer);
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('button', 'playagain');
@@ -70,10 +72,10 @@ function game(input){
         cScore.textContent = `${computerScore}`;
         if(playerScore == 5){
             winner.textContent = "Congratulations! You won the game!";
-            gameSection.appendChild(playAgain);
+            gameSection.insertBefore(playAgain, btnContainer);
         } else if(computerScore == 5){
             winner.textContent = "The computer won.... Better luck next time!";
-            gameSection.appendChild(playAgain);
+            gameSection.insertBefore(playAgain, btnContainer);
         } 
     }
 }
