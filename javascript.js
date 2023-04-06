@@ -1,16 +1,18 @@
 const body = document.querySelector("body");
 
+const gameSection = document.getElementById("game-section");
+
 const results = document.createElement('div');
 results.classList.add('results');
-body.appendChild(results);
+gameSection.appendChild(results);
 
 const score = document.createElement('div');
 score.classList.add('score');
-body.appendChild(score);
+gameSection.appendChild(score);
 
 const winner = document.createElement('div');
 winner.classList.add('winner');
-body.appendChild(winner);
+gameSection.appendChild(winner);
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('button');
@@ -66,10 +68,10 @@ function game(input){
         score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
         if(playerScore == 5){
             winner.textContent = "Congratulations! You won the game!";
-            body.appendChild(playAgain);
+            gameSection.appendChild(playAgain);
         } else if(computerScore == 5){
             winner.textContent = "The computer won.... Better luck next time!";
-            body.appendChild(playAgain);
+            gameSection.appendChild(playAgain);
         } 
     }
 }
@@ -88,5 +90,5 @@ playAgain.addEventListener('click', () => {
     results.textContent = "";
     score.textContent = "";
     winner.textContent = "";
-    body.removeChild(playAgain);
+    gameSection.removeChild(playAgain);
 });
