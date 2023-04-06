@@ -18,7 +18,7 @@ gameSection.appendChild(winner);
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('button', 'playagain');
-playAgain.textContent = "PLAY AGAIN?";
+playAgain.textContent = "PLAY AGAIN";
 
 
 
