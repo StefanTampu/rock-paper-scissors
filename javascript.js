@@ -35,7 +35,7 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
     if (playerSelection === computerSelection) {
-            results.textContent = "Tie!";
+            results.textContent = `It's a tie! You both chose ${playerSelection}.`;
     } else if (playerSelection == "rock"){
         if (computerSelection == "paper"){
             results.textContent = "You lose! Rock is beaten by paper.";
