@@ -59,8 +59,7 @@ h1 {
     justify-content: center;
     background-color: #e1c28d;
     color: #585858;
-    padding: 2rem;
-    height: 5rem;
+    padding: 1rem;
     width: 20rem;
 }
 .score-box p{
@@ -91,4 +90,33 @@ button {
     width: 15rem;
     font-size: 1.5rem;
     font-weight: 600;
+    transition: 0.1s;
+}
+
+button:hover {
+    font-size: 1.75rem;
+    font-weight: 700;
+    filter:sepia(50%);
+}
+
+button:active {
+    font-size: 1.5rem;
+    font-weight: 600;
+    filter: sepia(0%);
+}
+
+.results {
+    font-size: 1.5rem;
+    color: #585858;
+}
+
+.winner {
+    font-size: 1.5rem;
+    color: #585858;
+}
+
+.playagain {
+    background-color: #c3dfe8;
+    color: #585858;
+    border: 0.5rem double #e1c28d;
 }
