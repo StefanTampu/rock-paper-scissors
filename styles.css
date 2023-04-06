@@ -9,7 +9,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 body {
@@ -23,16 +23,19 @@ body {
     background-color: #f0ece2;
     color:  #585858;
     padding: 3rem;
-    height: 30rem;
-    width: 60rem;
+    height: 35rem;
+    width: 70rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#game-section h1 {
+h1 {
+    width: 100%;
+    text-align: center;
     font-size: 3rem;
-    margin: 1rem;
+    margin: 5rem;
+    color:  #585858;
 }
 
 #game-section h2 {
@@ -40,10 +43,24 @@ body {
     margin: 1rem;
 }
 
+#btn-container {
+    margin: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 2rem;
+}
+
 button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
     border: 0.5rem double #c3dfe8;
     background-color: #e1c28d;
     color: #585858;
     padding: 1rem;
+    width: 15rem;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
