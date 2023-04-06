@@ -40,7 +40,29 @@ h1 {
 
 #game-section h2 {
     font-size: 2rem; 
-    margin: 1rem;
+}
+
+#scores {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.score-box {
+    box-sizing: border-box;
+    border: 0.5rem solid #c3dfe8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #e1c28d;
+    color: #585858;
+    padding: 2rem;
+    height: 7rem;
+}
+.score-box p{
+    font-size: 2rem;
+    margin: 0;
 }
 
 #btn-container {
