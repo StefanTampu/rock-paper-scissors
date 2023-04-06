@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 const body = document.querySelector("body");
 
 const gameSection = document.getElementById("game-section");
@@ -6,9 +9,8 @@ const results = document.createElement('div');
 results.classList.add('results');
 gameSection.appendChild(results);
 
-const score = document.createElement('div');
-score.classList.add('score');
-gameSection.appendChild(score);
+const pScore = document.getElementById('player-score');
+const cScore = document.getElementById("computer-score");
 
 const winner = document.createElement('div');
 winner.classList.add('winner');
@@ -16,10 +18,9 @@ gameSection.appendChild(winner);
 
 const playAgain = document.createElement('button');
 playAgain.classList.add('button');
-playAgain.textContent = "Play again?";
+playAgain.textContent = "PLAY AGAIN?";
 
-let playerScore = 0;
-let computerScore = 0;
+
 
 function getComputerChoice(){
     let num = Math.ceil(Math.random()*3);
@@ -65,7 +66,8 @@ function playRound(playerSelection, computerSelection){
 function game(input){
     if(playerScore < 5 && computerScore < 5){
         playRound(input, getComputerChoice());
-        score.textContent = `Your Score: ${playerScore} ------- Computer Score: ${computerScore}`;
+        pScore.textContent = `${playerScore}`;
+        cScore.textContent = `${computerScore}`;
         if(playerScore == 5){
             winner.textContent = "Congratulations! You won the game!";
             gameSection.appendChild(playAgain);
@@ -88,7 +90,8 @@ playAgain.addEventListener('click', () => {
     playerScore = 0;
     computerScore = 0;
     results.textContent = "";
-    score.textContent = "";
+    pScore.textContent = `${playerScore}`;
+    cScore.textContent = `${computerScore}`;
     winner.textContent = "";
     gameSection.removeChild(playAgain);
 });
