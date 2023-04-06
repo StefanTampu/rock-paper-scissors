@@ -115,4 +115,5 @@ button:active {
     background-color: #c3dfe8;
     color: #585858;
     border: 0.5rem double #e1c28d;
+    margin-bottom: 2rem;
 }
